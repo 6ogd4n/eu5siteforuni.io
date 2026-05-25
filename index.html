@@ -7,13 +7,6 @@
     <link rel="icon" type="image/png" href="img/DLC_Europa_Universalis_V.png">
     <link rel="stylesheet" href="style.css">
     <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Lora:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Europa Universalis 5 | Project Caesar</title>
-    <link rel="stylesheet" href="style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Lora:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
-    
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
@@ -49,8 +42,7 @@
         </div>
     </section>
 
-<section id="hero" class="hero-section">
-        
+    <section id="hero" class="hero-section">
         <div class="hero-decor">
             <i class="fa-regular fa-compass bg-compass"></i>
             <div class="corner top-left"></div>
@@ -60,7 +52,7 @@
         </div>
 
         <div class="hero-content">
-            <img src="img/Logo_Europa_Universalis_5.png" alt="Europa Universalis 5" class="hero-logo">
+            <img src="img/Logo_Europa_Universalis_5.png" alt="Europa Universalis 5" class="hero-logo" id="main-logo">
             <p>Керуй історією. Створи власну імперію від Ренесансу до Просвітництва.</p>
             <a href="https://store.steampowered.com/app/3450310/Europa_Universalis_V/" target="_blank" class="cta-button">
                 <i class="fa-brands fa-steam" style="margin-right: 8px;"></i> СПРОБУВАТИ ЗАРАЗ
@@ -98,7 +90,7 @@
         </div>
     </section>
 
-<section id="roadmap" class="roadmap-section">
+    <section id="roadmap" class="roadmap-section">
         <div class="container">
             <h2>The Grand Voyage (Roadmap)</h2>
             <div class="timeline">
@@ -215,7 +207,7 @@
         </div>
     </section>
 
-<section id="screenshots" class="gallery-section">
+    <section id="screenshots" class="gallery-section">
         <div class="container">
             <h2>Архів картографа (Скріншоти)</h2>
             <p class="media-desc">Погляньте на перші кадри розбудови імперій та масштабних битв.</p>
@@ -230,7 +222,7 @@
         </div>
     </section>
 
-   <section id="community" class="creators-section">
+    <section id="community" class="creators-section">
         <div class="container">
             <h2>Офіційні хроніки (Гайди)</h2>
             <p class="media-desc">Ознайомтеся з базовими механіками, щоб ваша імперія процвітала з перших днів.</p>
@@ -271,8 +263,7 @@
         </div>
     </section>
 
-
-<section id="specs" class="specs-section">
+    <section id="specs" class="specs-section">
         <div class="container">
             <h2>Системні вимоги</h2>
             <div class="specs-grid">
@@ -310,7 +301,8 @@
             <i class="fa-solid fa-key secret-trigger" onclick="openSecret()"></i>
         </p>
     </footer>
-<div id="secret-modal" class="secret-modal">
+
+    <div id="secret-modal" class="secret-modal">
         <div class="secret-content">
             <span class="close-secret" onclick="closeSecret()">&times;</span>
             <h3>📜 Таємний указ</h3>
@@ -321,11 +313,42 @@
     </div>
 
     <script>
-        function openSecret() {
-            document.getElementById('secret-modal').style.display = 'flex';
-        }
-        function closeSecret() {
-            document.getElementById('secret-modal').style.display = 'none';
+        // Секретка в підвалі
+        function openSecret() { document.getElementById('secret-modal').style.display = 'flex'; }
+        function closeSecret() { document.getElementById('secret-modal').style.display = 'none'; }
+
+        // Великодка 1: Введення секретного слова (CAESAR)
+        let secretCode = "caesar";
+        let inputBuffer = "";
+        
+        document.addEventListener("keydown", function(event) {
+            inputBuffer += event.key.toLowerCase();
+            if (inputBuffer.length > secretCode.length) {
+                inputBuffer = inputBuffer.substring(1);
+            }
+            if (inputBuffer === secretCode) {
+                alert("📜 УКАЗ ІМПЕРАТОРА: Вибачте, але Римська імперія вже впала. Створіть власну!");
+                inputBuffer = "";
+            }
+        });
+
+        // Великодка 2: 5 кліків по логотипу
+        let logoClickCount = 0;
+        let mainLogo = document.getElementById("main-logo");
+
+        if(mainLogo) {
+            mainLogo.addEventListener("click", function() {
+                logoClickCount++;
+                if (logoClickCount === 5) {
+                    mainLogo.style.transition = "transform 1s ease-in-out";
+                    mainLogo.style.transform = "rotate(360deg)";
+                    setTimeout(() => {
+                        alert("⚔️ Секретний режим: 'Завоювання світу' активовано! (Жарт, іди будуй економіку)");
+                        mainLogo.style.transform = "rotate(0deg)"; 
+                        logoClickCount = 0; 
+                    }, 1000);
+                }
+            });
         }
     </script>
 </body>
