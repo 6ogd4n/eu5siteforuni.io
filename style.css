@@ -834,3 +834,88 @@ section {
         font-size: 1rem;
     }
 }
+/* ==========================================================================
+   17. ЗАЛ СЛАВИ (ДОСЯГНЕННЯ)
+   ========================================================================== */
+.achievements-section { 
+    background-color: #1a110d; /* Найтемніший фон для контрасту */
+}
+
+.achievements-grid { 
+    display: grid; 
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); 
+    gap: 25px; 
+    margin-top: 30px;
+}
+
+.achievement-card {
+    display: flex;
+    align-items: center;
+    background-color: #2A1D16;
+    border: 2px solid #3D2B21;
+    padding: 20px;
+    border-radius: 8px;
+    transition: all 0.5s ease;
+    /* Стан "Заблоковано" (сірий і тьмяний) */
+    filter: grayscale(100%);
+    opacity: 0.6;
+    cursor: default;
+}
+
+/* Стан "Розблоковано" (при наведенні миші) */
+.achievement-card:hover {
+    filter: grayscale(0%);
+    opacity: 1;
+    border-color: #D0AB6E;
+    box-shadow: 0 0 25px rgba(208, 171, 110, 0.2);
+    transform: translateY(-5px);
+}
+
+.ach-icon {
+    font-size: 2rem;
+    color: #D0AB6E;
+    margin-right: 20px;
+    min-width: 65px;
+    height: 65px;
+    background-color: #3D2B21;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 2px solid #A57F4F;
+    box-shadow: inset 0 0 10px rgba(0,0,0,0.8);
+    transition: all 0.5s ease;
+}
+
+/* Крутий ефект для іконки при розблокуванні */
+.achievement-card:hover .ach-icon {
+    background-color: #AC2629;
+    border-color: #D0AB6E;
+    color: #DED0B6;
+    box-shadow: 0 0 15px rgba(208, 171, 110, 0.5);
+}
+
+.ach-text { 
+    text-align: left; 
+}
+
+.ach-text h3 { 
+    font-size: 1.3rem; 
+    margin-bottom: 5px; 
+    color: #A57F4F; 
+    transition: color 0.3s;
+}
+
+.ach-text p { 
+    font-size: 0.95rem; 
+    color: #A57F4F; 
+    line-height: 1.4; 
+}
+
+.achievement-card:hover .ach-text h3 { 
+    color: #D0AB6E; /* Заголовок стає золотим */
+}
+
+.achievement-card:hover .ach-text p { 
+    color: #DED0B6; /* Текст стає світлішим */
+}
