@@ -312,7 +312,35 @@
         </div>
     </div>
 
+    <button id="back-to-top" class="back-to-top" onclick="scrollToTop()" title="Повернутися нагору">
+        <i class="fa-solid fa-arrow-up"></i>
+    </button>
+
     <script>
+
+// ==========================================
+        // КНОПКА "ВГОРУ"
+        // ==========================================
+        let backToTopBtn = document.getElementById("back-to-top");
+
+        // Відслідковуємо прокрутку сторінки
+        window.addEventListener("scroll", function() {
+            // Якщо прокрутили більше ніж на 300 пікселів вниз - показуємо кнопку
+            if (window.scrollY > 300) {
+                backToTopBtn.style.display = "flex";
+            } else {
+                backToTopBtn.style.display = "none";
+            }
+        });
+
+        // Функція для плавного повернення нагору
+        function scrollToTop() {
+            window.scrollTo({
+                top: 0,
+                behavior: "smooth"
+            });
+        }
+
         // Секретка в підвалі
         function openSecret() { document.getElementById('secret-modal').style.display = 'flex'; }
         function closeSecret() { document.getElementById('secret-modal').style.display = 'none'; }
