@@ -1,0 +1,360 @@
+/* ==========================================================================
+   1. ГЛОБАЛЬНІ НАЛАШТУВАННЯ ТА ТИПОГРАФІКА
+   ========================================================================== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth; /* Плавне прокручування сайту по кліку на меню */
+}
+
+body {
+    font-family: 'Lora', serif;
+    background-color: #2A1D16; /* Основний фон: Глибоке темне дерево */
+    color: #DED0B6; /* Колір тексту: Світлий пергамент */
+    line-height: 1.6;
+}
+
+h1, h2, h3, .logo {
+    font-family: 'Cinzel', serif; /* Історичний шрифт для заголовків */
+    color: #D0AB6E; /* Яскраве золото */
+}
+
+/* Розумний відступ для всіх якірних посилань (щоб текст не ховався під шапку) */
+section {
+    scroll-margin-top: 90px;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 60px 20px;
+    text-align: center;
+}
+
+/* ==========================================================================
+   2. ШАПКА САЙТУ ТА НАВІГАЦІЯ
+   ========================================================================== */
+.header {
+    background-color: #1a110d; 
+    padding: 20px 50px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+    border-bottom: 2px solid #A57F4F; 
+}
+
+.header .logo img {
+    height: 45px; 
+    width: auto;  
+}
+
+.nav-menu a {
+    color: #DED0B6;
+    text-decoration: none;
+    margin-left: 20px;
+    font-weight: bold;
+    text-transform: uppercase;
+    font-size: 0.9rem;
+    transition: color 0.3s;
+}
+
+.nav-menu a:hover {
+    color: #D0AB6E; 
+}
+
+/* Стилізація іконок у меню */
+.nav-menu a i {
+    margin-right: 8px; 
+    font-size: 1.1rem; 
+    color: #A57F4F; 
+    transition: transform 0.3s ease, color 0.3s ease; 
+}
+
+.nav-menu a:hover i {
+    transform: scale(1.2); 
+    color: #D0AB6E; 
+}
+
+/* ==========================================================================
+   3. ГОЛОВНИЙ ЕКРАН (HERO SECTION) ТА ДЕКОРАЦІЇ
+   ========================================================================== */
+.hero-section {
+    height: 100vh;
+    background-color: #1a110d; 
+    background-image: radial-gradient(circle at center, rgba(61, 43, 33, 0.6) 0%, rgba(13, 8, 6, 1) 100%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 0 20px;
+    position: relative;
+    overflow: hidden; 
+}
+
+/* Декоративний фон (Компас та Рамки) */
+.hero-decor {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none; 
+    z-index: 1;
+}
+
+.bg-compass {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 85vh; 
+    color: rgba(208, 171, 110, 0.03); 
+}
+
+.corner {
+    position: absolute;
+    width: 80px;
+    height: 80px;
+    border: 2px solid rgba(208, 171, 110, 0.3); 
+}
+
+.top-left { top: 40px; left: 40px; border-right: none; border-bottom: none; }
+.top-right { top: 40px; right: 40px; border-left: none; border-bottom: none; }
+.bottom-left { bottom: 40px; left: 40px; border-right: none; border-top: none; }
+.bottom-right { bottom: 40px; right: 40px; border-left: none; border-top: none; }
+
+/* Контент головного екрана */
+.hero-content {
+    position: relative;
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.hero-logo {
+    max-width: 90%; 
+    width: 550px;   
+    margin-bottom: 30px; 
+    filter: drop-shadow(0px 0px 50px rgba(208, 171, 110, 0.15)) drop-shadow(0px 10px 20px rgba(0, 0, 0, 0.9));
+}
+
+.hero-content p {
+    font-size: 1.5rem;
+    color: #DED0B6;
+    margin-bottom: 40px;
+    max-width: 700px;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.8);
+}
+
+.cta-button {
+    display: inline-block;
+    padding: 15px 40px;
+    background-color: #AC2629; 
+    color: #DED0B6;
+    text-decoration: none;
+    font-size: 1.2rem;
+    font-weight: bold;
+    border: 2px solid #AC2629;
+    border-radius: 4px;
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.cta-button:hover {
+    background-color: rgba(172, 38, 41, 0.2); 
+    color: #D0AB6E;
+    border-color: #D0AB6E;
+    box-shadow: 0 0 15px rgba(208, 171, 110, 0.5); 
+}
+
+/* ==========================================================================
+   4. БЛОК "ПРО ГРУ"
+   ========================================================================== */
+.about-section {
+    background-color: #3D2B21; 
+}
+
+.about-section h2 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+}
+
+.about-section p {
+    font-size: 1.2rem;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+/* ==========================================================================
+   5. БЛОК "ОСОБЛИВОСТІ"
+   ========================================================================== */
+.features-section {
+    background-color: #2A1D16; 
+}
+
+.features-section h2 {
+    font-size: 2.5rem;
+    margin-bottom: 40px;
+}
+
+.features-grid {
+    display: flex;
+    justify-content: space-around;
+    gap: 30px;
+    flex-wrap: wrap;
+}
+
+.feature-card {
+    background-color: #3D2B21; 
+    padding: 40px 30px;
+    border-radius: 6px;
+    width: 30%;
+    min-width: 250px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
+    border: 1px solid #A57F4F; 
+    border-top: 5px solid #AC2629; 
+    transition: transform 0.3s ease;
+}
+
+.feature-card:hover {
+    transform: translateY(-10px); 
+    border-color: #D0AB6E; 
+}
+
+.feature-card h3 {
+    margin-bottom: 15px;
+    font-size: 1.5rem;
+}
+
+/* ==========================================================================
+   6. БЛОК "МУЛЬТИМЕДІА / ТРЕЙЛЕР"
+   ========================================================================== */
+.media-section {
+    background-color: #2A1D16; 
+    padding-top: 100px; 
+    padding-bottom: 80px;
+}
+
+.media-section h2 {
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+}
+
+.media-desc {
+    font-size: 1.2rem;
+    color: #A57F4F; 
+    margin-bottom: 40px;
+}
+
+.video-wrapper {
+    width: 100%;
+    max-width: 900px; 
+    aspect-ratio: 16 / 9; 
+    margin: 0 auto; 
+    border: 2px solid #D0AB6E; 
+    border-radius: 8px; 
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.8); 
+    background-color: #000; 
+    overflow: hidden; 
+}
+
+.video-wrapper iframe {
+    width: 100%;
+    height: 100%;
+    border: none; 
+}
+
+/* ==========================================================================
+   7. БЛОК "СИСТЕМНІ ВИМОГИ"
+   ========================================================================== */
+.specs-section {
+    background-color: #3D2B21; 
+    padding-bottom: 80px;
+}
+
+.specs-section h2 {
+    font-size: 2.5rem;
+    margin-bottom: 40px;
+}
+
+.specs-grid {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    flex-wrap: wrap;
+}
+
+.spec-card {
+    background-color: #2A1D16; 
+    padding: 30px;
+    border-radius: 6px;
+    width: 45%;
+    min-width: 300px;
+    text-align: left; 
+    border: 1px solid #A57F4F; 
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.6);
+}
+
+.spec-card.recommended {
+    border: 2px solid #D0AB6E; 
+    box-shadow: 0 10px 20px rgba(208, 171, 110, 0.15); 
+}
+
+.spec-card h3 {
+    font-size: 1.8rem;
+    margin-bottom: 5px;
+    text-align: center;
+    color: #D0AB6E;
+}
+
+.os-req {
+    font-style: italic;
+    font-size: 0.9rem;
+    color: #A57F4F; 
+    text-align: center;
+    margin-bottom: 20px;
+    padding-bottom: 15px;
+    border-bottom: 1px dashed #A57F4F; 
+}
+
+.spec-card ul {
+    list-style: none; 
+}
+
+.spec-card li {
+    margin-bottom: 15px;
+    font-size: 1rem;
+    line-height: 1.5;
+    color: #DED0B6;
+}
+
+.spec-card li strong {
+    color: #D0AB6E; 
+    display: block; 
+    font-family: 'Cinzel', serif;
+    font-size: 1.1rem;
+    margin-bottom: 4px;
+    letter-spacing: 0.5px;
+}
+
+/* ==========================================================================
+   8. ПІДВАЛ (FOOTER)
+   ========================================================================== */
+.footer {
+    background-color: #1a110d;
+    color: #A57F4F; 
+    text-align: center;
+    padding: 30px 20px;
+    border-top: 1px solid #3D2B21;
+    font-size: 0.9rem;
+}
