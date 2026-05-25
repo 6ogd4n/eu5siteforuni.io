@@ -8,22 +8,21 @@
 }
 
 html {
-    scroll-behavior: smooth; /* Плавне прокручування сайту по кліку на меню */
+    scroll-behavior: smooth;
 }
 
 body {
     font-family: 'Lora', serif;
-    background-color: #2A1D16; /* Основний фон: Глибоке темне дерево */
-    color: #DED0B6; /* Колір тексту: Світлий пергамент */
+    background-color: #2A1D16;
+    color: #DED0B6;
     line-height: 1.6;
 }
 
 h1, h2, h3, .logo {
-    font-family: 'Cinzel', serif; /* Історичний шрифт для заголовків */
-    color: #D0AB6E; /* Яскраве золото */
+    font-family: 'Cinzel', serif;
+    color: #D0AB6E;
 }
 
-/* Розумний відступ для всіх якірних посилань (щоб текст не ховався під шапку) */
 section {
     scroll-margin-top: 90px;
 }
@@ -70,7 +69,6 @@ section {
     color: #D0AB6E; 
 }
 
-/* Стилізація іконок у меню */
 .nav-menu a i {
     margin-right: 8px; 
     font-size: 1.1rem; 
@@ -99,21 +97,16 @@ section {
     overflow: hidden; 
 }
 
-/* Декоративний фон (Компас та Рамки) */
 .hero-decor {
     position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
+    top: 0; left: 0; width: 100%; height: 100%;
     pointer-events: none; 
     z-index: 1;
 }
 
 .bg-compass {
     position: absolute;
-    top: 50%;
-    left: 50%;
+    top: 50%; left: 50%;
     transform: translate(-50%, -50%);
     font-size: 85vh; 
     color: rgba(208, 171, 110, 0.03); 
@@ -121,8 +114,7 @@ section {
 
 .corner {
     position: absolute;
-    width: 80px;
-    height: 80px;
+    width: 80px; height: 80px;
     border: 2px solid rgba(208, 171, 110, 0.3); 
 }
 
@@ -131,7 +123,6 @@ section {
 .bottom-left { bottom: 40px; left: 40px; border-right: none; border-top: none; }
 .bottom-right { bottom: 40px; right: 40px; border-left: none; border-top: none; }
 
-/* Контент головного екрана */
 .hero-content {
     position: relative;
     z-index: 2;
@@ -196,7 +187,7 @@ section {
 }
 
 /* ==========================================================================
-   5. БЛОК "ОСОБЛИВОСТІ"
+   5. БЛОК "ОСОБЛИВОСТІ" ТА КЛЮЧОВІ МЕХАНІКИ
    ========================================================================== */
 .features-section {
     background-color: #2A1D16; 
@@ -234,6 +225,14 @@ section {
 .feature-card h3 {
     margin-bottom: 15px;
     font-size: 1.5rem;
+}
+
+.feature-icon {
+    width: 64px; 
+    height: 64px;
+    display: block; 
+    margin: 0 auto 20px auto; 
+    filter: drop-shadow(0px 4px 8px rgba(0,0,0,0.6)); 
 }
 
 /* ==========================================================================
@@ -275,10 +274,305 @@ section {
 }
 
 /* ==========================================================================
-   7. БЛОК "СИСТЕМНІ ВИМОГИ"
+   7. ГАЛЕРЕЯ СКРІНШОТІВ
+   ========================================================================== */
+.gallery-section { 
+    background-color: #3D2B21; 
+}
+
+.gallery-ribbon {
+    display: flex;
+    gap: 20px;
+    overflow-x: auto; 
+    padding-bottom: 25px; 
+    scroll-snap-type: x mandatory; 
+}
+
+.gallery-ribbon::-webkit-scrollbar { height: 12px; }
+.gallery-ribbon::-webkit-scrollbar-track { background: #1a110d; border-radius: 6px; }
+.gallery-ribbon::-webkit-scrollbar-thumb { background: #A57F4F; border-radius: 6px; border: 2px solid #1a110d; }
+.gallery-ribbon::-webkit-scrollbar-thumb:hover { background: #D0AB6E; }
+
+.gallery-img {
+    height: 320px; 
+    width: auto;
+    border-radius: 6px;
+    border: 2px solid #A57F4F;
+    scroll-snap-align: center; 
+    transition: transform 0.3s ease, border-color 0.3s ease;
+    cursor: pointer;
+}
+
+.gallery-img:hover {
+    transform: scale(1.03); 
+    border-color: #D0AB6E;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.6);
+}
+
+/* ==========================================================================
+   8. ВІДЕО ВІД СПІЛЬНОТИ (CONTENT CREATORS)
+   ========================================================================== */
+.creators-section { 
+    background-color: #2A1D16; 
+}
+
+.creators-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+    gap: 40px;
+    margin-top: 30px;
+}
+
+.creator-card {
+    background-color: #3D2B21;
+    padding: 20px;
+    border-radius: 8px;
+    border: 1px solid #A57F4F;
+    text-align: left;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.5);
+}
+
+.video-wrapper-small {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    border-radius: 4px;
+    overflow: hidden;
+    margin-bottom: 20px;
+    border: 1px solid #1a110d;
+}
+
+.video-wrapper-small iframe {
+    position: absolute;
+    top: 0; left: 0; width: 100%; height: 100%;
+}
+
+.creator-card h3 { 
+    font-size: 1.4rem; 
+    margin-bottom: 10px; 
+    color: #DED0B6; 
+}
+
+.creator-name { 
+    color: #AC2629; 
+    font-weight: bold; 
+    font-size: 1.1rem;
+}
+
+.creator-name i { margin-right: 8px; }
+
+/* ==========================================================================
+   9. ДОРОЖНЯ КАРТА (TIMELINE)
+   ========================================================================== */
+.roadmap-section { 
+    background-color: #3D2B21; /* Змінив фон для контрасту між блоками */
+}
+
+.timeline {
+    position: relative;
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: left;
+}
+
+.timeline::after {
+    content: '';
+    position: absolute;
+    width: 4px;
+    background-color: #A57F4F;
+    top: 0; bottom: 0; left: 20px; 
+    border-radius: 2px;
+}
+
+.timeline-item {
+    padding: 20px 0 30px 60px;
+    position: relative;
+}
+
+.timeline-dot {
+    position: absolute;
+    width: 20px; height: 20px;
+    background-color: #AC2629;
+    border: 4px solid #D0AB6E;
+    border-radius: 50%;
+    left: 12px; top: 25px;
+    z-index: 1;
+    box-shadow: 0 0 10px rgba(208, 171, 110, 0.5);
+}
+
+.timeline-content {
+    background-color: #2A1D16;
+    padding: 25px;
+    border-radius: 6px;
+    border: 1px solid #A57F4F;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.5);
+}
+
+.timeline-content h3 { 
+    font-size: 1.5rem; 
+    margin-bottom: 10px; 
+}
+
+/* --- СТАТУСИ ДОРОЖНЬОЇ КАРТИ --- */
+
+/* Виконані етапи (Зелене світіння) */
+.timeline-item.completed .timeline-dot {
+    background-color: #2e592f;
+    border-color: #4a824c;
+    box-shadow: 0 0 20px rgba(74, 130, 76, 0.8); /* Зелене світіння */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #DED0B6;
+    font-size: 0.8rem;
+}
+
+.timeline-item.completed .timeline-content {
+    border-color: #4a824c; 
+}
+
+.timeline-item.completed h3 {
+    color: #4a824c;
+    text-decoration: line-through; 
+    text-decoration-color: rgba(222, 208, 182, 0.5);
+}
+
+/* Поточний активний етап */
+.timeline-item.active .timeline-dot {
+    background-color: #AC2629; 
+    border-color: #D0AB6E;
+    box-shadow: 0 0 20px rgba(208, 171, 110, 0.8); 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #D0AB6E;
+    font-size: 0.8rem;
+}
+
+.timeline-item.active .timeline-content {
+    border: 2px solid #D0AB6E; 
+    box-shadow: 0 5px 20px rgba(208, 171, 110, 0.15);
+    transform: scale(1.03); 
+}
+
+/* Майбутні етапи */
+.timeline-item:not(.completed):not(.active) .timeline-dot {
+    background-color: #1a110d; 
+    border-color: #A57F4F;
+    box-shadow: none;
+}
+
+.timeline-item:not(.completed):not(.active) .timeline-content {
+    opacity: 0.5; 
+    filter: grayscale(60%); 
+}
+
+/* ==========================================================================
+   10. ВІДГУКИ ПРЕСИ
+   ========================================================================== */
+.reviews-section { background-color: #2A1D16; }
+
+.reviews-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+}
+
+.review-card {
+    background-color: #3D2B21;
+    padding: 30px;
+    border-radius: 6px;
+    border-top: 3px solid #D0AB6E;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.4);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.stars { color: #D0AB6E; margin-bottom: 15px; font-size: 1.2rem; }
+.review-text { font-style: italic; font-size: 1.1rem; margin-bottom: 20px; flex-grow: 1; }
+.reviewer { color: #A57F4F; font-size: 1rem; text-align: right; }
+
+/* ==========================================================================
+   11. ПОШИРЕНІ ЗАПИТАННЯ (FAQ)
+   ========================================================================== */
+.faq-section { background-color: #3D2B21; }
+
+.faq-container { max-width: 800px; margin: 0 auto; text-align: left; }
+
+.faq-item {
+    background-color: #2A1D16;
+    border: 1px solid #A57F4F;
+    border-radius: 6px;
+    margin-bottom: 15px;
+    overflow: hidden;
+}
+
+.faq-item summary::-webkit-details-marker { display: none; }
+.faq-item summary {
+    list-style: none;
+    padding: 20px;
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #DED0B6;
+    cursor: pointer;
+    background-color: #1a110d;
+    transition: background-color 0.3s;
+}
+
+.faq-item summary:hover { background-color: #3D2B21; color: #D0AB6E; }
+
+.faq-answer {
+    padding: 20px;
+    border-top: 1px dashed #A57F4F;
+    background-color: #2A1D16;
+}
+
+/* ==========================================================================
+   12. ФОРМА ПІДПИСКИ (NEWSLETTER)
+   ========================================================================== */
+.newsletter-section {
+    background-image: radial-gradient(circle at center, #3D2B21 0%, #1a110d 100%);
+    padding: 80px 20px;
+}
+
+.newsletter-box {
+    max-width: 600px;
+    margin: 0 auto;
+    background-color: rgba(26, 17, 13, 0.8);
+    padding: 50px;
+    border: 2px solid #D0AB6E;
+    border-radius: 8px;
+    box-shadow: 0 15px 30px rgba(0,0,0,0.8);
+}
+
+.newsletter-box p { margin-bottom: 30px; font-size: 1.1rem; }
+
+.newsletter-form {
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+}
+
+.newsletter-form input {
+    flex-grow: 1;
+    padding: 15px;
+    background-color: #3D2B21;
+    border: 1px solid #A57F4F;
+    color: #DED0B6;
+    font-family: 'Lora', serif;
+    font-size: 1rem;
+    border-radius: 4px;
+    outline: none;
+}
+
+.newsletter-form input:focus { border-color: #D0AB6E; }
+
+/* ==========================================================================
+   13. СИСТЕМНІ ВИМОГИ
    ========================================================================== */
 .specs-section {
-    background-color: #3D2B21; 
+    background-color: #2A1D16; 
     padding-bottom: 80px;
 }
 
@@ -295,7 +589,7 @@ section {
 }
 
 .spec-card {
-    background-color: #2A1D16; 
+    background-color: #3D2B21; 
     padding: 30px;
     border-radius: 6px;
     width: 45%;
@@ -348,7 +642,7 @@ section {
 }
 
 /* ==========================================================================
-   8. ПІДВАЛ (FOOTER)
+   14. ПІДВАЛ (FOOTER)
    ========================================================================== */
 .footer {
     background-color: #1a110d;
@@ -358,97 +652,34 @@ section {
     border-top: 1px solid #3D2B21;
     font-size: 0.9rem;
 }
+
 /* ==========================================================================
-   9. АДАПТИВНІСТЬ ДЛЯ МОБІЛЬНИХ ПРИСТРОЇВ (МЕДІАЗАПИТИ)
+   15. ПАСХАЛКА (ТАЄМНИЙ АРХІВ)
    ========================================================================== */
-@media screen and (max-width: 768px) {
-    
-    /* Виправляємо шапку: логотип зверху, меню під ним */
-    .header {
-        flex-direction: column;
-        padding: 15px 10px;
-        gap: 15px; /* Відстань між лого і меню */
-    }
-
-    /* Вирівнюємо пункти меню */
-    .nav-menu {
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: center;
-        gap: 12px;
-    }
-
-    .nav-menu a {
-        margin-left: 0; /* Прибираємо комп'ютерні відступи */
-        font-size: 0.8rem; /* Трохи зменшуємо шрифт для телефонів */
-    }
-
-    /* Оскільки шапка стала вищою (два поверхи), збільшуємо відступ для секцій */
-    section {
-        scroll-margin-top: 140px; 
-    }
-
-    /* Коригуємо головний екран */
-    .hero-logo {
-        width: 100%;
-        max-width: 350px;
-    }
-
-    .hero-content p {
-        font-size: 1.1rem;
-        margin-bottom: 30px;
-    }
-
-    .bg-compass {
-        font-size: 60vh; /* Зменшуємо фоновий компас, щоб не вилазив */
-    }
-
-    /* Робимо картки на весь екран одна під одною */
-    .feature-card, 
-    .spec-card {
-        width: 100%;
-        min-width: 100%;
-    }
-
-    /* Зменшуємо величезні відступи між блоками на телефоні */
-    .container {
-        padding: 40px 15px;
-    }
-}
-/* ==========================================================================
-   10. ПАСХАЛКА (ТАЄМНИЙ АРХІВ)
-   ========================================================================== */
-
-/* Іконка ключа в підвалі */
 .secret-trigger {
     margin-left: 10px;
-    opacity: 0.05; /* Робимо її майже прозорою, щоб знайшли тільки найуважніші */
+    opacity: 0.05; 
     cursor: pointer;
     transition: all 0.3s ease;
 }
 
 .secret-trigger:hover {
-    opacity: 0.8; /* Підсвічуємо, якщо випадково навели мишкою */
+    opacity: 0.8; 
     color: #D0AB6E;
     transform: rotate(45deg);
 }
 
-/* Затемнений фон модального вікна */
 .secret-modal {
-    display: none; /* Обов'язково ховаємо за замовчуванням! */
+    display: none; 
     position: fixed;
-    top: 0; 
-    left: 0; 
-    width: 100%; 
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.9); /* Майже чорний фон */
-    z-index: 9999; /* Поверх усього сайту */
+    top: 0; left: 0; width: 100%; height: 100%;
+    background-color: rgba(0, 0, 0, 0.9); 
+    z-index: 9999; 
     justify-content: center;
     align-items: center;
-    backdrop-filter: blur(5px); /* Розмиваємо сайт на фоні (сучасний ефект) */
+    backdrop-filter: blur(5px); 
 }
 
-/* Сама картка-сувій */
 .secret-content {
     background-color: #1a110d;
     border: 2px dashed #A57F4F;
@@ -456,8 +687,8 @@ section {
     text-align: center;
     max-width: 500px;
     position: relative;
-    box-shadow: 0 0 50px rgba(208, 171, 110, 0.15); /* Золота аура */
-    animation: popUp 0.5s ease-out; /* Анімація появи */
+    box-shadow: 0 0 50px rgba(208, 171, 110, 0.15); 
+    animation: popUp 0.5s ease-out; 
 }
 
 .secret-content h3 {
@@ -478,11 +709,9 @@ section {
     color: #A57F4F;
 }
 
-/* Кнопка закриття (хрестик) */
 .close-secret {
     position: absolute;
-    top: 10px; 
-    right: 20px;
+    top: 10px; right: 20px;
     font-size: 2.5rem; 
     color: #A57F4F; 
     cursor: pointer;
@@ -490,256 +719,78 @@ section {
 }
 
 .close-secret:hover {
-    color: #AC2629; /* Стає червоним при наведенні */
+    color: #AC2629; 
 }
 
-/* Анімація для ефектної появи */
 @keyframes popUp {
     from { transform: scale(0.5); opacity: 0; }
     to { transform: scale(1); opacity: 1; }
 }
-/* 11
-.roadmap-section { background-color: #2A1D16; }
-
-.timeline {
-    position: relative;
-    max-width: 800px;
-    margin: 0 auto;
-    text-align: left;
-}
-
-/* Вертикальна лінія */
-.timeline::after {
-    content: '';
-    position: absolute;
-    width: 4px;
-    background-color: #A57F4F;
-    top: 0;
-    bottom: 0;
-    left: 20px; /* Лінія йде зліва */
-    border-radius: 2px;
-}
-
-.timeline-item {
-    padding: 20px 0 30px 60px;
-    position: relative;
-}
-
-/* Крапочки на лінії */
-.timeline-dot {
-    position: absolute;
-    width: 20px;
-    height: 20px;
-    background-color: #AC2629;
-    border: 4px solid #D0AB6E;
-    border-radius: 50%;
-    left: 12px;
-    top: 25px;
-    z-index: 1;
-    box-shadow: 0 0 10px rgba(208, 171, 110, 0.5);
-}
-
-.timeline-content {
-    background-color: #3D2B21;
-    padding: 25px;
-    border-radius: 6px;
-    border: 1px solid #A57F4F;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.5);
-}
-
-.timeline-content h3 { font-size: 1.5rem; margin-bottom: 10px; }
 
 /* ==========================================================================
-   9. ВІДГУКИ ПРЕСИ
+   16. АДАПТИВНІСТЬ ДЛЯ МОБІЛЬНИХ ПРИСТРОЇВ (МЕДІАЗАПИТИ)
    ========================================================================== */
-.reviews-section { background-color: #3D2B21; }
+@media screen and (max-width: 768px) {
+    
+    .header {
+        flex-direction: column;
+        padding: 15px 10px;
+        gap: 15px; 
+    }
 
-.reviews-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 30px;
-}
+    .nav-menu {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 12px;
+    }
 
-.review-card {
-    background-color: #2A1D16;
-    padding: 30px;
-    border-radius: 6px;
-    border-top: 3px solid #D0AB6E;
-    box-shadow: 0 10px 20px rgba(0,0,0,0.4);
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-}
+    .nav-menu a {
+        margin-left: 0; 
+        font-size: 0.8rem; 
+    }
 
-.stars { color: #D0AB6E; margin-bottom: 15px; font-size: 1.2rem; }
-.review-text { font-style: italic; font-size: 1.1rem; margin-bottom: 20px; flex-grow: 1; }
-.reviewer { color: #A57F4F; font-size: 1rem; text-align: right; }
+    section {
+        scroll-margin-top: 140px; 
+    }
 
-/* ==========================================================================
-   10. ПОШИРЕНІ ЗАПИТАННЯ (FAQ)
-   ========================================================================== */
-.faq-section { background-color: #2A1D16; }
+    .hero-logo {
+        width: 100%;
+        max-width: 350px;
+    }
 
-.faq-container { max-width: 800px; margin: 0 auto; text-align: left; }
+    .hero-content p {
+        font-size: 1.1rem;
+        margin-bottom: 30px;
+    }
 
-.faq-item {
-    background-color: #3D2B21;
-    border: 1px solid #A57F4F;
-    border-radius: 6px;
-    margin-bottom: 15px;
-    overflow: hidden;
-}
+    .bg-compass {
+        font-size: 60vh; 
+    }
 
-/* Приховуємо стандартний трикутник браузера */
-.faq-item summary::-webkit-details-marker { display: none; }
-.faq-item summary {
-    list-style: none;
-    padding: 20px;
-    font-size: 1.2rem;
-    font-weight: bold;
-    color: #DED0B6;
-    cursor: pointer;
-    background-color: #1a110d;
-    transition: background-color 0.3s;
-}
+    .feature-card, 
+    .spec-card {
+        width: 100%;
+        min-width: 100%;
+    }
 
-.faq-item summary:hover { background-color: #2A1D16; color: #D0AB6E; }
+    .container {
+        padding: 40px 15px;
+    }
 
-.faq-answer {
-    padding: 20px;
-    border-top: 1px dashed #A57F4F;
-    background-color: #3D2B21;
-}
+    .newsletter-form { 
+        flex-direction: column; 
+    }
+    
+    .newsletter-box { 
+        padding: 30px 15px; 
+    }
 
-/* ==========================================================================
-   11. ФОРМА ПІДПИСКИ (NEWSLETTER)
-   ========================================================================== */
-.newsletter-section {
-    background-image: radial-gradient(circle at center, #3D2B21 0%, #1a110d 100%);
-    padding: 80px 20px;
-}
-
-.newsletter-box {
-    max-width: 600px;
-    margin: 0 auto;
-    background-color: rgba(26, 17, 13, 0.8);
-    padding: 50px;
-    border: 2px solid #D0AB6E;
-    border-radius: 8px;
-    box-shadow: 0 15px 30px rgba(0,0,0,0.8);
-}
-
-.newsletter-box p { margin-bottom: 30px; font-size: 1.1rem; }
-
-.newsletter-form {
-    display: flex;
-    gap: 10px;
-    justify-content: center;
-}
-
-.newsletter-form input {
-    flex-grow: 1;
-    padding: 15px;
-    background-color: #3D2B21;
-    border: 1px solid #A57F4F;
-    color: #DED0B6;
-    font-family: 'Lora', serif;
-    font-size: 1rem;
-    border-radius: 4px;
-    outline: none;
-}
-
-.newsletter-form input:focus { border-color: #D0AB6E; }
-/* Форма підписки в колонку на телефоні */
-    .newsletter-form { flex-direction: column; }
-    .newsletter-box { padding: 30px 15px; }
-    .gallery-section { background-color: #3D2B21; }
-
-.gallery-ribbon {
-    display: flex;
-    gap: 20px;
-    overflow-x: auto; /* Дозволяє скролити по горизонталі */
-    padding-bottom: 25px; /* Місце для повзунка */
-    scroll-snap-type: x mandatory; /* Магнітне прилипання до картинок */
-}
-
-/* Красивий кастомний повзунок (Scrollbar) у стилі гри */
-.gallery-ribbon::-webkit-scrollbar { height: 12px; }
-.gallery-ribbon::-webkit-scrollbar-track { background: #1a110d; border-radius: 6px; }
-.gallery-ribbon::-webkit-scrollbar-thumb { background: #A57F4F; border-radius: 6px; border: 2px solid #1a110d; }
-.gallery-ribbon::-webkit-scrollbar-thumb:hover { background: #D0AB6E; }
-
-.gallery-img {
-    height: 320px; /* Фіксована висота для всіх скріншотів */
-    width: auto;
-    border-radius: 6px;
-    border: 2px solid #A57F4F;
-    scroll-snap-align: center; /* Центрує картинку при зупинці скролу */
-    transition: transform 0.3s ease, border-color 0.3s ease;
-    cursor: pointer;
-}
-
-.gallery-img:hover {
-    transform: scale(1.03); /* Легке збільшення при наведенні */
-    border-color: #D0AB6E;
-    box-shadow: 0 10px 20px rgba(0,0,0,0.6);
-}
-
-/* ==========================================================================
-   13. ВІДЕО ВІД СПІЛЬНОТИ (CONTENT CREATORS)
-   ========================================================================== */
-.creators-section { background-color: #2A1D16; }
-
-.creators-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
-    gap: 40px;
-    margin-top: 30px;
-}
-
-.creator-card {
-    background-color: #3D2B21;
-    padding: 20px;
-    border-radius: 8px;
-    border: 1px solid #A57F4F;
-    text-align: left;
-    box-shadow: 0 10px 20px rgba(0,0,0,0.5);
-}
-
-/* Контейнер 16:9 для маленьких відео */
-.video-wrapper-small {
-    position: relative;
-    width: 100%;
-    aspect-ratio: 16 / 9;
-    border-radius: 4px;
-    overflow: hidden;
-    margin-bottom: 20px;
-    border: 1px solid #1a110d;
-}
-
-.video-wrapper-small iframe {
-    position: absolute;
-    top: 0; left: 0; width: 100%; height: 100%;
-}
-
-.creator-card h3 { 
-    font-size: 1.4rem; 
-    margin-bottom: 10px; 
-    color: #DED0B6; 
-}
-
-.creator-name { 
-    color: #AC2629; /* Імператорський червоний */
-    font-weight: bold; 
-    font-size: 1.1rem;
-}
-
-.creator-name i { margin-right: 8px; }
-/* Стилізація іконок у картках особливостей */
-.feature-icon {
-    width: 64px; /* Оптимальний розмір для сітки */
-    height: 64px;
-    display: block; /* Робить іконку окремим блоком */
-    margin: 0 auto 20px auto; /* Центрує та робить відступ від тексту */
-    filter: drop-shadow(0px 4px 8px rgba(0,0,0,0.6)); /* Ефектна тінь */
+    .gallery-img { 
+        height: 200px; 
+    }
+    
+    .creators-grid { 
+        grid-template-columns: 1fr; 
+    }
 }
