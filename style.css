@@ -415,3 +415,86 @@ section {
         padding: 40px 15px;
     }
 }
+/* ==========================================================================
+   10. ПАСХАЛКА (ТАЄМНИЙ АРХІВ)
+   ========================================================================== */
+
+/* Іконка ключа в підвалі */
+.secret-trigger {
+    margin-left: 10px;
+    opacity: 0.05; /* Робимо її майже прозорою, щоб знайшли тільки найуважніші */
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.secret-trigger:hover {
+    opacity: 0.8; /* Підсвічуємо, якщо випадково навели мишкою */
+    color: #D0AB6E;
+    transform: rotate(45deg);
+}
+
+/* Затемнений фон модального вікна */
+.secret-modal {
+    display: none; /* Обов'язково ховаємо за замовчуванням! */
+    position: fixed;
+    top: 0; 
+    left: 0; 
+    width: 100%; 
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.9); /* Майже чорний фон */
+    z-index: 9999; /* Поверх усього сайту */
+    justify-content: center;
+    align-items: center;
+    backdrop-filter: blur(5px); /* Розмиваємо сайт на фоні (сучасний ефект) */
+}
+
+/* Сама картка-сувій */
+.secret-content {
+    background-color: #1a110d;
+    border: 2px dashed #A57F4F;
+    padding: 50px 40px;
+    text-align: center;
+    max-width: 500px;
+    position: relative;
+    box-shadow: 0 0 50px rgba(208, 171, 110, 0.15); /* Золота аура */
+    animation: popUp 0.5s ease-out; /* Анімація появи */
+}
+
+.secret-content h3 {
+    font-size: 2.2rem;
+    margin-bottom: 20px;
+}
+
+.riddle {
+    font-style: italic;
+    color: #D0AB6E;
+    margin: 25px 0;
+    font-size: 1.3rem;
+    line-height: 1.4;
+}
+
+.secret-note {
+    font-size: 0.9rem;
+    color: #A57F4F;
+}
+
+/* Кнопка закриття (хрестик) */
+.close-secret {
+    position: absolute;
+    top: 10px; 
+    right: 20px;
+    font-size: 2.5rem; 
+    color: #A57F4F; 
+    cursor: pointer;
+    transition: color 0.2s;
+}
+
+.close-secret:hover {
+    color: #AC2629; /* Стає червоним при наведенні */
+}
+
+/* Анімація для ефектної появи */
+@keyframes popUp {
+    from { transform: scale(0.5); opacity: 0; }
+    to { transform: scale(1); opacity: 1; }
+}

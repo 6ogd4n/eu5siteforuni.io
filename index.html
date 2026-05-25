@@ -130,6 +130,23 @@
     <footer class="footer">
         <p>&copy; 2026 Розроблено студентом в рамках курсової роботи. Всі права належать Paradox Interactive.</p>
     </footer>
+<div id="secret-modal" class="secret-modal">
+        <div class="secret-content">
+            <span class="close-secret" onclick="closeSecret()">&times;</span>
+            <h3>📜 Таємний указ</h3>
+            <p>Вітаємо, правителю! Ти знайшов прихований архів розробників.</p>
+            <p class="riddle">"Той, хто контролює Босфор, контролює світ. Яке місто є ключем до двох континентів?"</p>
+            <p class="secret-note">Знайди відповідь, перш ніж розпочати свою грандіозну кампанію.</p>
+        </div>
+    </div>
 
+    <script>
+        function openSecret() {
+            document.getElementById('secret-modal').style.display = 'flex';
+        }
+        function closeSecret() {
+            document.getElementById('secret-modal').style.display = 'none';
+        }
+    </script>
 </body>
 </html>
