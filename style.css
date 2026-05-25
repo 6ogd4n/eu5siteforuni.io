@@ -498,3 +498,155 @@ section {
     from { transform: scale(0.5); opacity: 0; }
     to { transform: scale(1); opacity: 1; }
 }
+/* 11
+.roadmap-section { background-color: #2A1D16; }
+
+.timeline {
+    position: relative;
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: left;
+}
+
+/* Вертикальна лінія */
+.timeline::after {
+    content: '';
+    position: absolute;
+    width: 4px;
+    background-color: #A57F4F;
+    top: 0;
+    bottom: 0;
+    left: 20px; /* Лінія йде зліва */
+    border-radius: 2px;
+}
+
+.timeline-item {
+    padding: 20px 0 30px 60px;
+    position: relative;
+}
+
+/* Крапочки на лінії */
+.timeline-dot {
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    background-color: #AC2629;
+    border: 4px solid #D0AB6E;
+    border-radius: 50%;
+    left: 12px;
+    top: 25px;
+    z-index: 1;
+    box-shadow: 0 0 10px rgba(208, 171, 110, 0.5);
+}
+
+.timeline-content {
+    background-color: #3D2B21;
+    padding: 25px;
+    border-radius: 6px;
+    border: 1px solid #A57F4F;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.5);
+}
+
+.timeline-content h3 { font-size: 1.5rem; margin-bottom: 10px; }
+
+/* ==========================================================================
+   9. ВІДГУКИ ПРЕСИ
+   ========================================================================== */
+.reviews-section { background-color: #3D2B21; }
+
+.reviews-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+}
+
+.review-card {
+    background-color: #2A1D16;
+    padding: 30px;
+    border-radius: 6px;
+    border-top: 3px solid #D0AB6E;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.4);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.stars { color: #D0AB6E; margin-bottom: 15px; font-size: 1.2rem; }
+.review-text { font-style: italic; font-size: 1.1rem; margin-bottom: 20px; flex-grow: 1; }
+.reviewer { color: #A57F4F; font-size: 1rem; text-align: right; }
+
+/* ==========================================================================
+   10. ПОШИРЕНІ ЗАПИТАННЯ (FAQ)
+   ========================================================================== */
+.faq-section { background-color: #2A1D16; }
+
+.faq-container { max-width: 800px; margin: 0 auto; text-align: left; }
+
+.faq-item {
+    background-color: #3D2B21;
+    border: 1px solid #A57F4F;
+    border-radius: 6px;
+    margin-bottom: 15px;
+    overflow: hidden;
+}
+
+/* Приховуємо стандартний трикутник браузера */
+.faq-item summary::-webkit-details-marker { display: none; }
+.faq-item summary {
+    list-style: none;
+    padding: 20px;
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #DED0B6;
+    cursor: pointer;
+    background-color: #1a110d;
+    transition: background-color 0.3s;
+}
+
+.faq-item summary:hover { background-color: #2A1D16; color: #D0AB6E; }
+
+.faq-answer {
+    padding: 20px;
+    border-top: 1px dashed #A57F4F;
+    background-color: #3D2B21;
+}
+
+/* ==========================================================================
+   11. ФОРМА ПІДПИСКИ (NEWSLETTER)
+   ========================================================================== */
+.newsletter-section {
+    background-image: radial-gradient(circle at center, #3D2B21 0%, #1a110d 100%);
+    padding: 80px 20px;
+}
+
+.newsletter-box {
+    max-width: 600px;
+    margin: 0 auto;
+    background-color: rgba(26, 17, 13, 0.8);
+    padding: 50px;
+    border: 2px solid #D0AB6E;
+    border-radius: 8px;
+    box-shadow: 0 15px 30px rgba(0,0,0,0.8);
+}
+
+.newsletter-box p { margin-bottom: 30px; font-size: 1.1rem; }
+
+.newsletter-form {
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+}
+
+.newsletter-form input {
+    flex-grow: 1;
+    padding: 15px;
+    background-color: #3D2B21;
+    border: 1px solid #A57F4F;
+    color: #DED0B6;
+    font-family: 'Lora', serif;
+    font-size: 1rem;
+    border-radius: 4px;
+    outline: none;
+}
+
+.newsletter-form input:focus { border-color: #D0AB6E; }
