@@ -352,14 +352,11 @@
 
     <script>
 
-// ==========================================
-        // КНОПКА "ВГОРУ"
-        // ==========================================
+
         let backToTopBtn = document.getElementById("back-to-top");
 
-        // Відслідковуємо прокрутку сторінки
+        
         window.addEventListener("scroll", function() {
-            // Якщо прокрутили більше ніж на 300 пікселів вниз - показуємо кнопку
             if (window.scrollY > 300) {
                 backToTopBtn.style.display = "flex";
             } else {
@@ -367,7 +364,7 @@
             }
         });
 
-        // Функція для плавного повернення нагору
+
         function scrollToTop() {
             window.scrollTo({
                 top: 0,
@@ -375,11 +372,9 @@
             });
         }
 
-        // Секретка в підвалі
         function openSecret() { document.getElementById('secret-modal').style.display = 'flex'; }
         function closeSecret() { document.getElementById('secret-modal').style.display = 'none'; }
 
-        // Великодка 1: Введення секретного слова (CAESAR)
         let secretCode = "caesar";
         let inputBuffer = "";
         
@@ -394,7 +389,7 @@
             }
         });
 
-        // Великодка 2: 5 кліків по логотипу
+
         let logoClickCount = 0;
         let mainLogo = document.getElementById("main-logo");
 
