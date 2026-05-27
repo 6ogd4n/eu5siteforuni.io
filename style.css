@@ -1,6 +1,4 @@
-/* ==========================================================================
-   1. ГЛОБАЛЬНІ НАЛАШТУВАННЯ ТА ТИПОГРАФІКА
-   ========================================================================== */
+
 * {
     margin: 0;
     padding: 0;
@@ -34,9 +32,7 @@ section {
     text-align: center;
 }
 
-/* ==========================================================================
-   2. ШАПКА САЙТУ ТА НАВІГАЦІЯ
-   ========================================================================== */
+
 .header {
     background-color: #1a110d; 
     padding: 20px 50px;
@@ -81,9 +77,7 @@ section {
     color: #D0AB6E; 
 }
 
-/* ==========================================================================
-   3. ГОЛОВНИЙ ЕКРАН (HERO SECTION) ТА ДЕКОРАЦІЇ
-   ========================================================================== */
+
 .hero-section {
     height: 100vh;
     background-color: #1a110d; 
@@ -168,9 +162,6 @@ section {
     box-shadow: 0 0 15px rgba(208, 171, 110, 0.5); 
 }
 
-/* ==========================================================================
-   4. БЛОК "ПРО ГРУ"
-   ========================================================================== */
 .about-section {
     background-color: #3D2B21; 
 }
@@ -186,9 +177,7 @@ section {
     margin: 0 auto;
 }
 
-/* ==========================================================================
-   5. БЛОК "ОСОБЛИВОСТІ" ТА КЛЮЧОВІ МЕХАНІКИ
-   ========================================================================== */
+
 .features-section {
     background-color: #2A1D16; 
 }
@@ -235,9 +224,7 @@ section {
     filter: drop-shadow(0px 4px 8px rgba(0,0,0,0.6)); 
 }
 
-/* ==========================================================================
-   6. БЛОК "МУЛЬТИМЕДІА / ТРЕЙЛЕР"
-   ========================================================================== */
+
 .media-section {
     background-color: #2A1D16; 
     padding-top: 100px; 
@@ -273,9 +260,7 @@ section {
     border: none; 
 }
 
-/* ==========================================================================
-   7. ГАЛЕРЕЯ СКРІНШОТІВ
-   ========================================================================== */
+
 .gallery-section { 
     background-color: #3D2B21; 
 }
@@ -309,9 +294,7 @@ section {
     box-shadow: 0 10px 20px rgba(0,0,0,0.6);
 }
 
-/* ==========================================================================
-   8. ВІДЕО ВІД СПІЛЬНОТИ (CONTENT CREATORS)
-   ========================================================================== */
+
 .creators-section { 
     background-color: #2A1D16; 
 }
@@ -361,11 +344,9 @@ section {
 
 .creator-name i { margin-right: 8px; }
 
-/* ==========================================================================
-   9. ДОРОЖНЯ КАРТА (TIMELINE)
-   ========================================================================== */
+
 .roadmap-section { 
-    background-color: #3D2B21; /* Змінив фон для контрасту між блоками */
+    background-color: #3D2B21; 
 }
 
 .timeline {
@@ -413,13 +394,11 @@ section {
     margin-bottom: 10px; 
 }
 
-/* --- СТАТУСИ ДОРОЖНЬОЇ КАРТИ --- */
 
-/* Виконані етапи (Зелене світіння) */
 .timeline-item.completed .timeline-dot {
     background-color: #2e592f;
     border-color: #4a824c;
-    box-shadow: 0 0 20px rgba(74, 130, 76, 0.8); /* Зелене світіння */
+    box-shadow: 0 0 20px rgba(74, 130, 76, 0.8); 
     display: flex;
     justify-content: center;
     align-items: center;
@@ -437,7 +416,6 @@ section {
     text-decoration-color: rgba(222, 208, 182, 0.5);
 }
 
-/* Поточний активний етап */
 .timeline-item.active .timeline-dot {
     background-color: #AC2629; 
     border-color: #D0AB6E;
@@ -455,7 +433,7 @@ section {
     transform: scale(1.03); 
 }
 
-/* Майбутні етапи */
+
 .timeline-item:not(.completed):not(.active) .timeline-dot {
     background-color: #1a110d; 
     border-color: #A57F4F;
@@ -467,9 +445,7 @@ section {
     filter: grayscale(60%); 
 }
 
-/* ==========================================================================
-   10. ВІДГУКИ ПРЕСИ
-   ========================================================================== */
+
 .reviews-section { background-color: #2A1D16; }
 
 .reviews-grid {
@@ -493,9 +469,7 @@ section {
 .review-text { font-style: italic; font-size: 1.1rem; margin-bottom: 20px; flex-grow: 1; }
 .reviewer { color: #A57F4F; font-size: 1rem; text-align: right; }
 
-/* ==========================================================================
-   11. ПОШИРЕНІ ЗАПИТАННЯ (FAQ)
-   ========================================================================== */
+
 .faq-section { background-color: #3D2B21; }
 
 .faq-container { max-width: 800px; margin: 0 auto; text-align: left; }
@@ -528,9 +502,6 @@ section {
     background-color: #2A1D16;
 }
 
-/* ==========================================================================
-   12. ФОРМА ПІДПИСКИ (NEWSLETTER)
-   ========================================================================== */
 .newsletter-section {
     background-image: radial-gradient(circle at center, #3D2B21 0%, #1a110d 100%);
     padding: 80px 20px;
@@ -568,9 +539,7 @@ section {
 
 .newsletter-form input:focus { border-color: #D0AB6E; }
 
-/* ==========================================================================
-   13. СИСТЕМНІ ВИМОГИ
-   ========================================================================== */
+
 .specs-section {
     background-color: #2A1D16; 
     padding-bottom: 80px;
@@ -641,9 +610,6 @@ section {
     letter-spacing: 0.5px;
 }
 
-/* ==========================================================================
-   14. ПІДВАЛ (FOOTER)
-   ========================================================================== */
 .footer {
     background-color: #1a110d;
     color: #A57F4F; 
@@ -653,9 +619,6 @@ section {
     font-size: 0.9rem;
 }
 
-/* ==========================================================================
-   15. ПАСХАЛКА (ТАЄМНИЙ АРХІВ)
-   ========================================================================== */
 .secret-trigger {
     margin-left: 10px;
     opacity: 0.05; 
@@ -727,9 +690,7 @@ section {
     to { transform: scale(1); opacity: 1; }
 }
 
-/* ==========================================================================
-   16. АДАПТИВНІСТЬ ДЛЯ МОБІЛЬНИХ ПРИСТРОЇВ (МЕДІАЗАПИТИ)
-   ========================================================================== */
+
 @media screen and (max-width: 768px) {
     
     .header {
@@ -794,16 +755,14 @@ section {
         grid-template-columns: 1fr; 
     }
 }
-/* ==========================================================================
-   16. КНОПКА "ВГОРУ" (SCROLL TO TOP)
-   ========================================================================== */
+
 .back-to-top {
     position: fixed;
     bottom: 30px;
-    right: 30px; /* Розміщуємо справа внизу */
-    background-color: #AC2629; /* Імператорський червоний */
+    right: 30px; 
+    background-color: #AC2629; 
     color: #DED0B6;
-    border: 2px solid #D0AB6E; /* Золота рамка */
+    border: 2px solid #D0AB6E; 
     border-radius: 50%;
     width: 50px;
     height: 50px;
@@ -812,19 +771,19 @@ section {
     z-index: 1000;
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.8);
     transition: all 0.3s ease;
-    display: none; /* Прихована за замовчуванням, поки не прокрутимо вниз */
+    display: none; 
     justify-content: center;
     align-items: center;
 }
 
 .back-to-top:hover {
-    transform: translateY(-5px); /* Злегка підстрибує при наведенні */
+    transform: translateY(-5px); 
     background-color: #8c1e21;
     color: #D0AB6E;
-    box-shadow: 0 8px 20px rgba(208, 171, 110, 0.4); /* Золоте світіння */
+    box-shadow: 0 8px 20px rgba(208, 171, 110, 0.4); 
 }
 
-/* Для телефонів робимо кнопку трохи меншою */
+
 @media screen and (max-width: 768px) {
     .back-to-top {
         width: 40px;
@@ -834,11 +793,9 @@ section {
         font-size: 1rem;
     }
 }
-/* ==========================================================================
-   17. ЗАЛ СЛАВИ (ДОСЯГНЕННЯ)
-   ========================================================================== */
+
 .achievements-section { 
-    background-color: #1a110d; /* Найтемніший фон для контрасту */
+    background-color: #1a110d;
 }
 
 .achievements-grid { 
@@ -856,13 +813,13 @@ section {
     padding: 20px;
     border-radius: 8px;
     transition: all 0.5s ease;
-    /* Стан "Заблоковано" (сірий і тьмяний) */
+  
     filter: grayscale(100%);
     opacity: 0.6;
     cursor: default;
 }
 
-/* Стан "Розблоковано" (при наведенні миші) */
+
 .achievement-card:hover {
     filter: grayscale(0%);
     opacity: 1;
@@ -887,7 +844,6 @@ section {
     transition: all 0.5s ease;
 }
 
-/* Крутий ефект для іконки при розблокуванні */
 .achievement-card:hover .ach-icon {
     background-color: #AC2629;
     border-color: #D0AB6E;
@@ -913,9 +869,9 @@ section {
 }
 
 .achievement-card:hover .ach-text h3 { 
-    color: #D0AB6E; /* Заголовок стає золотим */
+    color: #D0AB6E; 
 }
 
 .achievement-card:hover .ach-text p { 
-    color: #DED0B6; /* Текст стає світлішим */
+    color: #DED0B6; 
 }
