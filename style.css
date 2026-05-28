@@ -1,4 +1,3 @@
-
 * {
     margin: 0;
     padding: 0;
@@ -874,4 +873,83 @@ section {
 
 .achievement-card:hover .ach-text p { 
     color: #DED0B6; 
+}
+
+
+.image-modal {
+    display: none; 
+    position: fixed;
+    z-index: 9999; 
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(13, 8, 6, 0.95); 
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    backdrop-filter: blur(4px); 
+}
+
+
+.modal-image-content {
+    max-width: 85%;
+    max-height: 75vh;
+    border-radius: 6px;
+    border: 2px solid #D0AB6E; 
+    box-shadow: 0 0 30px rgba(0, 0, 0, 0.9), 0 0 15px rgba(208, 171, 110, 0.1);
+    animation: zoomEffect 0.35s cubic-bezier(0.175, 0.885, 0.32, 1.15); 
+}
+
+
+.close-image {
+    position: absolute;
+    top: 25px;
+    right: 40px;
+    color: #DED0B6;
+    font-size: 55px;
+    font-weight: 300;
+    cursor: pointer;
+    transition: color 0.3s ease, transform 0.3s ease;
+    line-height: 1;
+}
+
+.close-image:hover {
+    color: #AC2629; /* Червоний маркер імперії при наведенні */
+    transform: scale(1.15);
+}
+
+
+#image-caption {
+    margin-top: 20px;
+    color: #D0AB6E;
+    font-family: 'Cinzel', serif;
+    font-size: 1.3rem;
+    letter-spacing: 1px;
+    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.8);
+    text-align: center;
+    max-width: 80%;
+    animation: zoomEffect 0.35s ease;
+}
+
+
+@keyframes zoomEffect {
+    from { transform: scale(0.93); opacity: 0; }
+    to { transform: scale(1); opacity: 1; }
+}
+
+
+@media screen and (max-width: 768px) {
+    .modal-image-content {
+        max-width: 95%;
+        max-height: 65vh;
+    }
+    .close-image {
+        top: 15px;
+        right: 20px;
+        font-size: 45px;
+    }
+    #image-caption {
+        font-size: 1rem;
+    }
 }

@@ -37,7 +37,7 @@
                     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
                     referrerpolicy="strict-origin-when-cross-origin" 
                     allowfullscreen>
-                </iframe>
+                 interactive</iframe>
             </div>
         </div>
     </section>
@@ -63,7 +63,7 @@
     <section id="about" class="about-section">
         <div class="container">
             <h2>Про глобальну стратегію</h2>
-            <p>Нова частина легендарної серії глобальних стратегій дозволяє вам взяти під контроль будь-яку націю світу. Ведіть свою державу через століття, розвиваючи економіку, укладаючи союзи та перемагаючи у масштабних війнах.</p>
+            <p>Нова частина legendaрної серії глобальних стратегій дозволяє вам взяти під контроль будь-яку націю світу. Ведіть свою державу через століття, розвиваючи економіку, укладаючи союзи та перемагаючи у масштабних війнах.</p>
         </div>
     </section>
 
@@ -213,17 +213,17 @@
             <p class="media-desc">Погляньте на перші кадри розбудови імперій та масштабних битв.</p>
             
             <div class="gallery-ribbon">
-                <img src="img/Byzantium1.jpg" alt="Скріншот 1" class="gallery-img">
-                <img src="img/KyivRus1.jpg" alt="Скріншот 2" class="gallery-img">
-                <img src="img/KyivRus2.jpg" alt="Скріншот 3" class="gallery-img">
-                <img src="img/Ireland1.jpg" alt="Скріншот 4" class="gallery-img">
-                <img src="img/Volyn1.jpg" alt="Скріншот 5" class="gallery-img">
-                <img src="img/Volyn2.jpg" alt="Скріншот 6" class="gallery-img">
+                <img src="img/Byzantium1.jpg" alt="Візантія: На порозі нової ери" class="gallery-img">
+                <img src="img/KyivRus1.jpg" alt="Київська Русь: Розбудова державності" class="gallery-img">
+                <img src="img/KyivRus2.jpg" alt="Карта східної Європи" class="gallery-img">
+                <img src="img/Ireland1.jpg" alt="Клани Ірландії" class="gallery-img">
+                <img src="img/Volyn1.jpg" alt="Волинь: Оборона замків" class="gallery-img">
+                <img src="img/Volyn2.jpg" alt="Економіка Волинських земель" class="gallery-img">
             </div>
         </div>
     </section>
 
-<section id="achievements" class="achievements-section">
+    <section id="achievements" class="achievements-section">
         <div class="container">
             <h2>Імператорські амбіції</h2>
             <p class="media-desc">Наведіть курсор, щоб розблокувати найрідкісніші досягнення гри.</p>
@@ -340,10 +340,16 @@
         <div class="secret-content">
             <span class="close-secret" onclick="closeSecret()">&times;</span>
             <h3>📜 Таємний указ</h3>
-            <p>Вітаємо, правителю! Ти знайшов прихований архів розробників.</p>
+            <p>Вітаємо, правителю! Ти знайшов прихований архив розробників.</p>
             <p class="riddle">"Той, хто контролює Босфор, контролює світ. Яке місто є ключем до двох континентів?"</p>
             <p class="secret-note">Знайди відповідь, перш ніж розпочати свою грандіозну кампанію.</p>
         </div>
+    </div>
+
+    <div id="image-modal" class="image-modal">
+        <span class="close-image" onclick="closeImageModal()">&times;</span>
+        <img class="modal-image-content" id="expanded-image" alt="">
+        <div id="image-caption"></div>
     </div>
 
     <button id="back-to-top" class="back-to-top" onclick="scrollToTop()" title="Повернутися нагору">
@@ -351,11 +357,8 @@
     </button>
 
     <script>
-
-
         let backToTopBtn = document.getElementById("back-to-top");
 
-        
         window.addEventListener("scroll", function() {
             if (window.scrollY > 300) {
                 backToTopBtn.style.display = "flex";
@@ -363,7 +366,6 @@
                 backToTopBtn.style.display = "none";
             }
         });
-
 
         function scrollToTop() {
             window.scrollTo({
@@ -389,7 +391,6 @@
             }
         });
 
-
         let logoClickCount = 0;
         let mainLogo = document.getElementById("main-logo");
 
@@ -407,6 +408,38 @@
                 }
             });
         }
+
+--
+        const imageModal = document.getElementById("image-modal");
+        const expandedImg = document.getElementById("expanded-image");
+        const imageCaption = document.getElementById("image-caption");
+        const galleryImages = document.querySelectorAll(".gallery-img");
+
+        galleryImages.forEach(img => {
+            img.addEventListener("click", function() {
+                imageModal.style.display = "flex";
+                expandedImg.src = this.src;
+                imageCaption.innerHTML = this.alt; 
+            });
+        });
+
+        function closeImageModal() {
+            imageModal.style.display = "none";
+        }
+
+
+        imageModal.addEventListener("click", function(event) {
+            if (event.target === imageModal) {
+                closeImageModal();
+            }
+        });
+
+
+        document.addEventListener("keydown", function(event) {
+            if (event.key === "Escape" && imageModal.style.display === "flex") {
+                closeImageModal();
+            }
+        });
     </script>
 </body>
 </html>
