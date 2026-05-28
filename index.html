@@ -409,7 +409,7 @@
             });
         }
 
---
+        
         const imageModal = document.getElementById("image-modal");
         const expandedImg = document.getElementById("expanded-image");
         const imageCaption = document.getElementById("image-caption");
@@ -434,7 +434,7 @@
             }
         });
 
-
+        // Закриття клавішею Escape
         document.addEventListener("keydown", function(event) {
             if (event.key === "Escape" && imageModal.style.display === "flex") {
                 closeImageModal();
